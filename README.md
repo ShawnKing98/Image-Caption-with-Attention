@@ -9,6 +9,6 @@ Running guide:
 - Download the python api of [COCO](https://github.com/cocodataset/cocoapi) or [Vizwiz](https://github.com/Yinan-Zhao/vizwiz-caption)
 - Run prepro.py to build the vocabulary and resize the pictures
 - Run main.py to start training
-- Run validate.py along with passed-in checkpoint path to do the test
+- Run validate.py along with passed-in checkpoint & vocabulary path to do the test. This script can predict a caption given a image, as well as give bleu scores on given validation set.
 
 Our network parameters is uploaded to [Google drive](https://drive.google.com/drive/folders/1G77T-LKDiabX4T6qNecKY1IFEjZfzCDn?usp=sharing), trained for 3 days on COCO (~30 epoches) and Vizwiz (~100 epoches) using Greatlakes servers. 
