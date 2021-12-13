@@ -23,6 +23,7 @@ parser.add_argument('--data_name', type=str, default='coco2014')
 parser.add_argument('--model_path', type=str, default='models/', help='path for saving trained models')
 parser.add_argument('--crop_size', type=int, default=224, help='size for randomly cropping images')
 parser.add_argument('--vocab_path', type=str, default='data/vocab.pkl', help='path for vocabulary wrapper')
+parser.add_argument('--test_image', type=str, default=None, help='path for testing image')
 parser.add_argument('--image_dir', type=str, default='data/train2014_resized', help='directory for resized images')
 parser.add_argument('--image_dir_val', type=str, default='data/val2014_resized', help='directory for resized images')
 parser.add_argument('--image_dir_test', type=str, default='data/test2014')
@@ -93,11 +94,13 @@ def main(args):
                             num_workers=args.num_workers,
                             val=True
                            )
-    bleu_ave, bleu1, bleu2, bleu3, bleu4 = validate(val_loader=val_loader,
-                            encoder=encoder,
-                            decoder=decoder,
-                            criterion=criterion)
-    #predict(val_loader, vocab, encoder, decoder)
+    # Use this to get bleu score on validation set
+    # bleu_ave, bleu1, bleu2, bleu3, bleu4 = validate(val_loader=val_loader,
+    #                        encoder=encoder,
+    #                        decoder=decoder,
+    #                        criterion=criterion)
+    # Use this to predict a caption on a given image
+    predict(val_loader, vocab, encoder, decoder, image_path=args.test_image)
     print(f"Average Bleu: {bleu_ave}")
     print(f"Bleu1: {bleu1}")
     print(f"Bleu2: {bleu2}")
