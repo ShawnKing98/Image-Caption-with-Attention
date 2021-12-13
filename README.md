@@ -11,4 +11,4 @@ Running guide:
 - Run main.py to start training
 - Run validate.py along with passed-in checkpoint & vocabulary path to do the test. This script can predict a caption given a image, as well as give bleu scores on given validation set.
 
-Our network parameters is uploaded to [Google drive](https://drive.google.com/drive/folders/1G77T-LKDiabX4T6qNecKY1IFEjZfzCDn?usp=sharing), trained for 3 days on COCO (~30 epoches) and Vizwiz (~100 epoches) using Greatlakes servers. 
+Our network parameters and vocabulary file for both datasets have been uploaded to [Google drive](https://drive.google.com/drive/folders/1G77T-LKDiabX4T6qNecKY1IFEjZfzCDn?usp=sharing), trained for 3 days on COCO (~30 epoches) and Vizwiz (~100 epoches) using Greatlakes servers. 
