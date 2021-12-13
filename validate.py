@@ -228,7 +228,7 @@ def predict(val_loader, vocab, encoder, decoder, image_path=None):
     if image_path:
         image_ori = Image.open(image_path).convert('RGB')
         transform = transforms.Compose([
-            transforms.CenterCrop(min(image_ori.shape)),
+            transforms.CenterCrop(min(image_ori.width, image_ori.height)),
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
             transforms.Normalize((0.485, 0.456, 0.406),
